@@ -1,0 +1,30 @@
+body {
+  background-color: black;
+}
+
+.container {
+  text-align: center;
+}
+
+#output {
+  font-size: 900%;
+  
+}
+
+#title {
+  font-size: 200%;
+  color: white;
+}
+
+.btn-default {
+  font-size: 150%;
+  border-radius: 15px;
+  color: white;
+  background: #a57225;
+  border-radius: 15px;
+  &:hover {
+    background: #E64848;
+    transition: all 0.3s ease;
+    color: #FFF;
+  }
+}
