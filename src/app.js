@@ -4,39 +4,43 @@ export class App {
     this.time = Math.floor(14999);
     this.mes = "25:00"
     this.running = false;
-       
+         
    
   }
 
-start() {
-  setTimeout(function(){  
-    
-  this.time--; 
-  console.log(this.time)
-  this.mes=this.time
-  }, 
-100);
-  // if (this.time > 0) {
-  //   setTimeout(function() {
-  //     this.time--;
-  //     let mins = Math.floor(this.time / 10 / 60);
-  //     let secs = Math.floor(this.time / 10 % 60);
-  //     let tenths = this.time % 10;
-  //     if (mins < 10) {
-  //     mins = this.mes + mins;
-  //   }
-  //   if (secs < 10) {
-  //     secs = this.mes + secs;
-  //   }
-  //  start()
-   
-  //     }, 100);
-  // }
+start(){
+ 
+  if (!this.running){
+        this.time--
+        let mins = Math.floor(this.time / 10 / 60);
+        let secs = Math.floor(this.time / 10 % 60);
+        let tenths = this.time % 10;
+
+         if (mins < 10) {
+          mins = this.mes + mins;
+        }
+        if (secs < 10) {
+          secs = this.mes + secs;
+        }
+  
+        this.mes=mins + ":" + secs
 }
+}
+
+decrement() { 
+     let that = this
+     setInterval(function () {
+
+      that.start();
+
+     }, 100);
+}
+
   reset(){
 
-   this.running = false;  
-   this.mes = this.time
+   this.running = true;  
+   this.time = 14999;
+   this.mes = this.time;
    this.mes = "25:00"
    
   }
@@ -62,6 +66,7 @@ start() {
   }  
 
   increase() {
+
   this.time += 600;
   let mins = Math.floor(this.time / 10 / 60);
   let secs = Math.floor(this.time / 10 % 60);
