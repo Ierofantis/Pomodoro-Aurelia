@@ -1,4 +1,4 @@
-# aurelia-skeleton-webpack
+# Pomodoro-Aurelia
 
 ## Getting started
 
